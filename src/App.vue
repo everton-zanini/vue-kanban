@@ -10,8 +10,8 @@
           <img class="img-responsive image-logo" src="@/assets/logo.png" alt="todo kanban">
         </section>
         <section class="navbar-section">
-          <a href="" class="btn btn-link">Linkedin</a>
-          <a href="" class="btn btn-link">Github</a>
+          <a href="https://www.linkedin.com/in/everton-zanini-8bb43917a/" target="blank" class="btn btn-link">Linkedin</a>
+          <a href="https://github.com/everton-zanini/vue-kanban" target="blank" class="btn btn-link">Github</a>
         </section>
       </header>
       <router-view/>
