@@ -1,22 +1,22 @@
 
 <template>
-  <div class="tile flex-centered" :class="{ checked: todo.checked }">
+  <div class="tile" :class="{ checked: todo.checked }">
     <div class="tile-icon">
       <div>
-        <i class="icon icon-time centered"></i>
+        <i class="icon icon-2x" :class="todo.checked ? 'icon-check' : 'icon-time'"></i>
       </div>
     </div>
-    <dir class="tile-content">
-      <div class="tile-subtitle">{{ todo.description }}</div>
-    </dir>
-    <div class="tile-action">
-      <button @click="$emit('toggle', todo)" class="btn btn-link">
-        <span v-if="todo.checked"> Desmarcar </span>
-        <span v-else>Concluído</span>
-      </button>
-      <button @click="$emit('remove',todo)" class="btn btn-link">
-        <span class="text-error">Remover</span>
-      </button>
+    <div class="tile-content">
+      <p class="tile-subtitle">{{ todo.description }}</p>
+      <p>
+        <button @click="$emit('toggle', todo)" class="btn btn-link">
+          <span v-if="todo.checked"> Desmarcar </span>
+          <span v-else>Concluído</span>
+        </button>
+        <button @click="$emit('remove', todo)" class="btn btn-link">
+          <span class="text-error">Remover</span>
+        </button>
+      </p>
     </div>
   </div>
 </template>
@@ -30,6 +30,11 @@ export default {
 </script>
 
 <style scoped>
+.tile{
+  margin-top: 1rem;
+  padding: 10px;
+  box-shadow: 0 0.25rem 1rem rgba(48,55,66, 0.15);
+}
 .checked {
   text-decoration: line-through;
   color: lightgrey;
